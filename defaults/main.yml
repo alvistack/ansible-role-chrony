@@ -35,7 +35,7 @@ chrony_driftfile: "{{ _chrony_driftfile }}"
 # Log files location.
 chrony_logdir: "{{ _chrony_logdir }}"
 
-# The bindaddress directive binds the socket on which chronyd listens for NTP 
+# The bindaddress directive binds the socket on which chronyd listens for NTP
 # requests to a local address of the computer.
 chrony_bindaddress: "127.0.0.1"
 
