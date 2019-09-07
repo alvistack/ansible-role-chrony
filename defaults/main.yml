@@ -1,0 +1,51 @@
+---
+
+# (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Service name for chrony.
+chrony_service: "{{ _chrony_service }}"
+
+# The various modes are determined by the command keyword and the type of the
+# required IP address.
+chrony_configuration_commands: "{{ _chrony_configuration_commands }}"
+
+# chronyd configuration file.
+chrony_conf: "{{ _chrony_conf }}"
+
+# This directive specify the location of the file containing ID/key pairs for
+# NTP authentication.
+chrony_keyfile: "{{ _chrony_keyfile }}"
+
+# This directive specify the file into which chronyd will store the rate
+# information.
+chrony_driftfile: "{{ _chrony_driftfile }}"
+
+# Log files location.
+chrony_logdir: "{{ _chrony_logdir }}"
+
+# The bindaddress directive binds the socket on which chronyd listens for NTP 
+# requests to a local address of the computer.
+chrony_bindaddress: "127.0.0.1"
+
+# This option allows you to configure the port on which chronyd will listen
+# for NTP requests.
+chrony_port: "123"
+
+# The chronyd(8) daemon implements a general purpose address/mask based
+# restriction list.
+chrony_access_control_commands: [
+  "allow 127.0.0.1",
+  "allow ::1",
+]
