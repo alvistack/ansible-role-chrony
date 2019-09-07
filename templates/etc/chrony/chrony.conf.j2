@@ -43,14 +43,6 @@ rtcsync
 # one second, but only in the first three clock updates.
 makestep 1 3
 
-# The bindaddress directive binds the socket on which chronyd listens for NTP
-# requests to a local address of the computer.
-bindaddress {{ chrony_bindaddress }}
-
-# This option allows you to configure the port on which chronyd will listen
-# for NTP requests.
-port {{ chrony_port }}
-
 # This directive designates subnets (or nodes) from which NTP clients are allowed
 # to access to 'chronyd'.
 {% for command in chrony_access_control_commands %}
