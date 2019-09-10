@@ -20,6 +20,8 @@ _zypper: [
   { state: "latest", name: "chrony" },
 ]
 
+_chrony_owner: "chrony"
+_chrony_group: "chrony"
 _chrony_service: "chronyd"
 _chrony_conf: "/etc/chrony.conf"
 _chrony_keyfile: "/etc/chrony.keys"

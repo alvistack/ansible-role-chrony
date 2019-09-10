@@ -20,6 +20,8 @@ _apt: [
   { state: "latest", name: "chrony" },
 ]
 
+_chrony_owner: "_chrony"
+_chrony_group: "_chrony"
 _chrony_service: "chrony"
 _chrony_conf: "/etc/chrony/chrony.conf"
 _chrony_keyfile: "/etc/chrony/chrony.keys"
