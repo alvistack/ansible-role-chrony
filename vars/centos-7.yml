@@ -18,6 +18,7 @@ _yum: [
   { state: "absent", name: "ntp" },
   { state: "absent", name: "ntpdate" },
   { state: "latest", name: "chrony" },
+  { state: "latest", name: "net-tools" },
 ]
 
 _chrony_owner: "chrony"
