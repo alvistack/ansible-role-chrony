@@ -48,6 +48,20 @@
   ignore_errors: true
   tags: chrony
 
+- name: prepare directories
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0755') }}"
+    state: "{{ item.state | default('directory') }}"
+  loop:
+    - { dest: "{{ chrony_conf | dirname }}" }
+    - { dest: "{{ chrony_driftfile | dirname }}", owner: "{{ chrony_owner }}", group: "{{ chrony_group }}" }
+    - { dest: "{{ chrony_keyfile | dirname }}" }
+    - { dest: "{{ chrony_logdir }}", owner: "{{ chrony_owner }}", group: "{{ chrony_group }}" }
+  tags: chrony
+
 - name: copy templates
   template:
     dest: "{{ item.dest }}"
@@ -59,6 +73,18 @@
     - { src: "./templates/etc/chrony/chrony.conf.j2", dest: "{{ chrony_conf }}" }
   notify:
     - chrony | systemctl restart
+  tags: chrony
+
+- name: prepare files
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+    state: "{{ item.state | default('file') }}"
+  loop:
+    - { dest: "{{ chrony_conf }}" }
+    - { dest: "{{ chrony_keyfile }}", group: "{{ chrony_group }}", mode: "0640" }
   tags: chrony
 
 - name: flush handlers

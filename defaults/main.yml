@@ -14,6 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Owner for chrony.
+chrony_owner: "{{ _chrony_owner }}"
+
+# Group for chrony.
+chrony_group: "{{ _chrony_group }}"
+
 # Service name for chrony.
 chrony_service: "{{ _chrony_service }}"
 
