@@ -57,6 +57,7 @@
     state: "{{ item.state | default('directory') }}"
   loop:
     - { dest: "{{ chrony_conf | dirname }}" }
+    - { dest: "{{ chrony_conf | dirname }}/chrony.d" }
     - { dest: "{{ chrony_driftfile | dirname }}", owner: "{{ chrony_owner }}", group: "{{ chrony_group }}" }
     - { dest: "{{ chrony_keyfile | dirname }}" }
     - { dest: "{{ chrony_logdir }}", owner: "{{ chrony_owner }}", group: "{{ chrony_group }}" }
