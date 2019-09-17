@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Default without port binding
+
 ## 3.3.0 - 2019-09-07
 
   - Initial release for Ansible 2.8 or higher
