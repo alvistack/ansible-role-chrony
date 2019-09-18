@@ -1,9 +1,14 @@
 # Ansible Role for Chrony
 
-## 3.4.0 - TBC
+## 3.5.0 - TBC
 
 ### Major Changes
 
+## 3.4.0 - 2019-09-18
+
+### Major Changes
+
+  - Run molecule test manually on Travis CI
   - Default without port binding
 
 ## 3.3.0 - 2019-09-07
