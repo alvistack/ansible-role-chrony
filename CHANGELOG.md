@@ -4,6 +4,7 @@
 
 ### Major Changes
 
+  - Run molecule test manually on Travis CI
   - Default without port binding
 
 ## 3.3.0 - 2019-09-07
