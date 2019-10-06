@@ -31,7 +31,7 @@
       changed_when: false
       ignore_errors: true
 
-    - name: chronyc sources -v
-      command: chronyc sources -v
+    - name: chronyc tracking
+      command: chronyc tracking
       register: result
       changed_when: result is not succeeded
