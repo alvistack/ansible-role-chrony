@@ -17,8 +17,8 @@
 - hosts: all
   remote_user: root
   become: true
-  roles:
-    - role: bootstrap
-    - role: locales
-    - role: timezone
-    - role: chrony
+  tasks:
+    - name: chronyc tracking
+      command: chronyc tracking
+      register: result
+      changed_when: result is not succeeded
