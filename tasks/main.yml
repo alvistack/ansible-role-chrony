@@ -87,15 +87,22 @@
     - { dest: "{{ chrony_keyfile }}", group: "{{ chrony_group }}", mode: "0640" }
   tags: chrony
 
+- name: enable service
+  service:
+    name: "{{ chrony_service }}"
+    enabled: true
+  changed_when: false
+  ignore_errors: true
+  tags: chrony
+
 - name: flush handlers
   meta: flush_handlers
   tags: chrony
 
-- name: enable service
+- name: start service
   service:
     name: "{{ chrony_service }}"
     state: "started"
-    enabled: true
   changed_when: false
   ignore_errors: true
   tags: chrony
