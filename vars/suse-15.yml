@@ -14,13 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_zypper:
-  - { state: "absent", name: "ntp" }
-  - { state: "absent", name: "ntpdate" }
-  - { state: "latest", name: "chrony" }
-  - { state: "latest", name: "net-tools" }
-  - { state: "latest", name: "net-tools-deprecated" }
-
 _chrony_owner: "chrony"
 
 _chrony_group: "chrony"
@@ -40,3 +33,10 @@ _chrony_configuration_commands:
   - "pool 1.opensuse.pool.ntp.org iburst"
   - "pool 2.opensuse.pool.ntp.org iburst"
   - "pool 3.opensuse.pool.ntp.org iburst"
+
+_zypper:
+  - { state: "absent", name: "ntp" }
+  - { state: "absent", name: "ntpdate" }
+  - { state: "latest", name: "chrony" }
+  - { state: "latest", name: "net-tools" }
+  - { state: "latest", name: "net-tools-deprecated" }
