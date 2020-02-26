@@ -14,13 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_yum:
-  - { state: "absent", name: "ntp" }
-  - { state: "absent", name: "ntpdate" }
-  - { state: "latest", name: "chrony" }
-  - { state: "latest", name: "net-tools" }
-
-
 _chrony_owner: "chrony"
 
 _chrony_group: "chrony"
@@ -40,3 +33,9 @@ _chrony_configuration_commands:
   - "server 1.centos.pool.ntp.org iburst"
   - "server 2.centos.pool.ntp.org iburst"
   - "server 3.centos.pool.ntp.org iburst"
+
+_yum:
+  - { state: "absent", name: "ntp" }
+  - { state: "absent", name: "ntpdate" }
+  - { state: "latest", name: "chrony" }
+  - { state: "latest", name: "net-tools" }

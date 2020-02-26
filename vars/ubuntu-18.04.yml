@@ -14,12 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_apt:
-  - { state: "absent", name: "ntp" }
-  - { state: "absent", name: "ntpdate" }
-  - { state: "latest", name: "chrony" }
-  - { state: "latest", name: "net-tools" }
-
 _chrony_owner: "_chrony"
 
 _chrony_group: "_chrony"
@@ -40,3 +34,9 @@ _chrony_configuration_commands:
   - "pool 2.ubuntu.pool.ntp.org iburst"
   - "pool 3.ubuntu.pool.ntp.org iburst"
   - "pool ntp.ubuntu.com"
+
+_apt:
+  - { state: "absent", name: "ntp" }
+  - { state: "absent", name: "ntpdate" }
+  - { state: "latest", name: "chrony" }
+  - { state: "latest", name: "net-tools" }
