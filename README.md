@@ -1,6 +1,6 @@
 # Ansible Role for Chrony
 
-[![Travis](https://img.shields.io/travis/alvistack/ansible-role-chrony.svg)](https://travis-ci.org/alvistack/ansible-role-chrony)
+[![Travis](https://img.shields.io/travis/com/alvistack/ansible-role-chrony.svg)](https://travis-ci.com/alvistack/ansible-role-chrony)
 [![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-chrony.svg)](https://github.com/alvistack/ansible-role-chrony)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-chrony.svg)](https://github.com/alvistack/ansible-role-chrony/blob/master/LICENSE)
 [![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.chrony-blue.svg)](https://galaxy.ansible.com/alvistack/chrony)
