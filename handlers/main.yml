@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: chrony | systemctl restart
+- name: chrony | systemctl restart chrony
   service:
     name: "{{ chrony_service }}"
     state: "restarted"
