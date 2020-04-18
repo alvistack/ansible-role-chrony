@@ -91,7 +91,7 @@
   meta: flush_handlers
   tags: chrony
 
-- name: start service
+- name: systemctl start chrony
   service:
     name: "{{ chrony_service }}"
     state: "started"
