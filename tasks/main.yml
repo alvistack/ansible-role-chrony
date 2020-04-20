@@ -87,10 +87,6 @@
     - { dest: "{{ chrony_keyfile }}", group: "{{ chrony_group }}", mode: "0640" }
   tags: chrony
 
-- name: flush handlers
-  meta: flush_handlers
-  tags: chrony
-
 - name: systemctl start chrony
   service:
     name: "{{ chrony_service }}"
@@ -98,4 +94,8 @@
     enabled: true
   changed_when: false
   ignore_errors: true
+  tags: chrony
+
+- name: flush handlers
+  meta: flush_handlers
   tags: chrony
