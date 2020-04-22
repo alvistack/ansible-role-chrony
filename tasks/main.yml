@@ -72,7 +72,7 @@
   loop:
     - { src: "./templates/etc/chrony/chrony.conf.j2", dest: "{{ chrony_conf }}" }
   notify:
-    - chrony | systemctl restart
+    - chrony | systemctl restart chrony
   tags: chrony
 
 - name: prepare files
@@ -87,15 +87,15 @@
     - { dest: "{{ chrony_keyfile }}", group: "{{ chrony_group }}", mode: "0640" }
   tags: chrony
 
-- name: flush handlers
-  meta: flush_handlers
-  tags: chrony
-
-- name: start service
+- name: systemctl start chrony
   service:
     name: "{{ chrony_service }}"
     state: "started"
     enabled: true
   changed_when: false
   ignore_errors: true
+  tags: chrony
+
+- name: flush handlers
+  meta: flush_handlers
   tags: chrony

@@ -38,5 +38,3 @@ _zypper:
   - { state: "absent", name: "ntp" }
   - { state: "absent", name: "ntpdate" }
   - { state: "latest", name: "chrony" }
-  - { state: "latest", name: "net-tools" }
-  - { state: "latest", name: "net-tools-deprecated" }

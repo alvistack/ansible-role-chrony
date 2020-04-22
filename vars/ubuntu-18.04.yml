@@ -1,5 +1,4 @@
 ---
-
 # (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,4 +38,3 @@ _apt:
   - { state: "absent", name: "ntp" }
   - { state: "absent", name: "ntpdate" }
   - { state: "latest", name: "chrony" }
-  - { state: "latest", name: "net-tools" }

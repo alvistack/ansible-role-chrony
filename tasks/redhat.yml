@@ -22,5 +22,5 @@
   register: result
   until: result is succeeded
   notify:
-    - chrony | systemctl restart
+    - chrony | systemctl restart chrony
   tags: chrony
