@@ -18,7 +18,7 @@
 # See http://www.pool.ntp.org/join.html for more information.
 {% for command in chrony_configuration_commands %}
 {{ command | regex_search('^(server|pool|peer).*$') }}
-{% endfor -%}
+{% endfor %}
 
 # This directive specify the location of the file containing ID/key pairs for
 # NTP authentication.
@@ -47,4 +47,4 @@ makestep 1 3
 # to access to 'chronyd'.
 {% for command in chrony_access_control_commands %}
 {{ command | regex_search('^(allow|deny).*$') }}
-{% endfor -%}
+{% endfor %}
