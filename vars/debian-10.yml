@@ -14,29 +14,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-galaxy_info:
-  role_name: chrony
-  author: "Wong Hoi Sing Edison <hswong3i@pantarei-design.com>"
-  description: Ansible Role for Chrony Management
-  company: PantaRei Design
-  license: Apache-2.0
-  min_ansible_version: 2.9
-  platforms:
-    - name: Ubuntu
-      versions:
-        - focal
-        - eoan
-        - bionic
-    - name: Debian
-      versions:
-        - buster
-    - name: EL
-      versions:
-        - 8
-        - 7
-    - name: opensuse
-      versions:
-        - 15.1
-  galaxy_tags:
-    - system
-dependencies: []
+_chrony_owner: "_chrony"
+
+_chrony_group: "_chrony"
+
+_chrony_service: "chrony"
+
+_chrony_conf: "/etc/chrony/chrony.conf"
+
+_chrony_keyfile: "/etc/chrony/chrony.keys"
+
+_chrony_driftfile: "/var/lib/chrony/chrony.drift"
+
+_chrony_logdir: "/var/log/chrony"
+
+_chrony_configuration_commands:
+  - "pool 0.debian.pool.ntp.org iburst"
+  - "pool 1.debian.pool.ntp.org iburst"
+  - "pool 2.debian.pool.ntp.org iburst"
+  - "pool 3.debian.pool.ntp.org iburst"
+
+_apt:
+  - { state: "absent", name: "ntp" }
+  - { state: "absent", name: "ntpdate" }
+  - { state: "latest", name: "chrony" }
