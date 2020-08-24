@@ -72,7 +72,7 @@
   loop:
     - { src: "./templates/etc/chrony/chrony.conf.j2", dest: "{{ chrony_conf }}" }
   notify:
-    - chrony | systemctl restart chrony
+    - chrony | systemctl restart chrony.service
   tags: chrony
 
 - name: prepare files
@@ -87,7 +87,7 @@
     - { dest: "{{ chrony_keyfile }}", group: "{{ chrony_group }}", mode: "0640" }
   tags: chrony
 
-- name: systemctl start chrony
+- name: systemctl start chrony.service
   service:
     name: "{{ chrony_service }}"
     state: "started"
