@@ -18,9 +18,6 @@
 chrony_owner: "{{ _chrony_owner }}"
 chrony_group: "{{ _chrony_group }}"
 
-# Service name for chrony.
-chrony_service: "{{ _chrony_service }}"
-
 # The various modes are determined by the command keyword and the type of the
 # required IP address.
 chrony_configuration_commands: "{{ _chrony_configuration_commands }}"

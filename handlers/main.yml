@@ -16,7 +16,7 @@
 
 - name: chrony | systemctl restart chrony.service
   service:
-    name: "{{ chrony_service }}"
+    name: "{{ _service }}"
     state: "restarted"
     enabled: true
   loop: "{{ ansible_play_hosts }}"

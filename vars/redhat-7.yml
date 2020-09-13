@@ -18,7 +18,7 @@ _chrony_owner: "chrony"
 
 _chrony_group: "chrony"
 
-_chrony_service: "chronyd.service"
+_service: "chronyd.service"
 
 _chrony_conf: "/etc/chrony.conf"
 
