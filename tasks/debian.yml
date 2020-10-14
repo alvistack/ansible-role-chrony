@@ -23,4 +23,3 @@
   until: result is succeeded
   notify:
     - chrony | systemctl restart chrony.service
-  tags: chrony
