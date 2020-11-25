@@ -1,3 +1,5 @@
+---
+
 # (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,20 +14,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ansible>=2.10.0a9,<2.11.0
-ansible-lint
-ansible-runner
-ansible-runner-http
-argcomplete
-docker
-enrich>=1.2.3
-flake8
-jmespath
-molecule>=3.2.0a1,<3.3.0
-molecule-docker
-molecule-podman
-molecule-vagrant
-netaddr
-openshift
-python-vagrant
-yamllint
+_chrony_owner: "_chrony"
+
+_chrony_group: "_chrony"
+
+_service: "chrony.service"
+
+_chrony_conf: "/etc/chrony/chrony.conf"
+
+_chrony_keyfile: "/etc/chrony/chrony.keys"
+
+_chrony_driftfile: "/var/lib/chrony/chrony.drift"
+
+_chrony_logdir: "/var/log/chrony"
+
+_chrony_configuration_commands:
+  - "pool 0.ubuntu.pool.ntp.org iburst"
+  - "pool 1.ubuntu.pool.ntp.org iburst"
+  - "pool 2.ubuntu.pool.ntp.org iburst"
+  - "pool 3.ubuntu.pool.ntp.org iburst"
+  - "pool ntp.ubuntu.com"
+
+_apt:
+  - { state: "absent", name: "ntp" }
+  - { state: "absent", name: "ntpdate" }
+  - { state: "latest", name: "chrony" }
