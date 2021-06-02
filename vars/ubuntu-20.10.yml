@@ -36,6 +36,4 @@ _chrony_configuration_commands:
   - "pool ntp.ubuntu.com"
 
 _apt:
-  - { state: "absent", name: "ntp" }
-  - { state: "absent", name: "ntpdate" }
   - { state: "latest", name: "chrony" }

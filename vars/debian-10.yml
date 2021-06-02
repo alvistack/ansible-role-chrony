@@ -35,6 +35,4 @@ _chrony_configuration_commands:
   - "pool 3.debian.pool.ntp.org iburst"
 
 _apt:
-  - { state: "absent", name: "ntp" }
-  - { state: "absent", name: "ntpdate" }
   - { state: "latest", name: "chrony" }
