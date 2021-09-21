@@ -1,5 +1,7 @@
 # Ansible Role for Chrony
 
+<img src="/alvistack.svg" width="75" alt="AlviStack">
+
 [![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-chrony/master)](https://gitlab.com/alvistack/ansible-role-chrony/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-chrony.svg)](https://github.com/alvistack/ansible-role-chrony/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-chrony.svg)](https://github.com/alvistack/ansible-role-chrony/blob/master/LICENSE)
