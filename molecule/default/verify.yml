@@ -19,6 +19,6 @@
   become: true
   tasks:
     - name: chronyc tracking
-      command: chronyc tracking
+      ansible.builtin.command: chronyc tracking
       register: result
       changed_when: result is not succeeded
