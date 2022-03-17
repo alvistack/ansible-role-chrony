@@ -15,7 +15,7 @@
 # limitations under the License.
 
 - name: chrony | systemctl restart chrony.service
-  service:
+  ansible.builtin.service:
     name: "{{ _service }}"
     state: "restarted"
     enabled: true
