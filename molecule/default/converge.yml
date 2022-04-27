@@ -20,5 +20,5 @@
   tasks:
     - name: include role
       ansible.builtin.include_role:
-        name: chrony
-      tags: chrony
+        name: alvistack.chrony
+      tags: alvistack.chrony
