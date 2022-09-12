@@ -62,9 +62,9 @@
     state: "{{ item.state | default('directory') }}"
   loop:
     - { dest: "{{ chrony_conf | dirname }}" }
-    - { dest: "{{ chrony_driftfile | dirname }}", owner: "{{ chrony_owner }}", group: "{{ chrony_group }}" }
+    - { dest: "{{ chrony_driftfile | dirname }}", owner: "{{ chrony_owner }}", group: "{{ chrony_group }}", mode: "0750" }
     - { dest: "{{ chrony_keyfile | dirname }}" }
-    - { dest: "{{ chrony_logdir }}", owner: "{{ chrony_owner }}", group: "{{ chrony_group }}" }
+    - { dest: "{{ chrony_logdir }}", owner: "{{ chrony_owner }}", group: "{{ chrony_group }}", mode: "0750" }
 
 - name: copy templates
   ansible.builtin.template:
