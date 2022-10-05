@@ -23,4 +23,5 @@
       ansible.builtin.command:
         cmd: chronyc tracking
       register: result
+      changed_when: result is not succeeded
       until: result is succeeded
