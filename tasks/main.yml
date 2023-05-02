@@ -63,7 +63,6 @@
   loop:
     - { dest: "{{ chrony_conf | dirname }}" }
     - { dest: "{{ chrony_driftfile | dirname }}", owner: "{{ chrony_owner }}", group: "{{ chrony_group }}", mode: "0750" }
-    - { dest: "{{ chrony_keyfile | dirname }}" }
     - { dest: "{{ chrony_logdir }}", owner: "{{ chrony_owner }}", group: "{{ chrony_group }}", mode: "0750" }
 
 - name: copy templates
@@ -87,7 +86,6 @@
     state: "{{ item.state | default('file') }}"
   loop:
     - { dest: "{{ chrony_conf }}" }
-    - { dest: "{{ chrony_keyfile }}", group: "{{ chrony_group }}", mode: "0640" }
 
 - name: flush handlers
   ansible.builtin.meta: flush_handlers
