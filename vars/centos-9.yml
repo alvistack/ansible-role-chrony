@@ -14,25 +14,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_chrony_owner: "chrony"
+_chrony_owner: chrony
 
-_chrony_group: "chrony"
+_chrony_group: chrony
 
-_service: "chronyd.service"
+_service: chronyd.service
 
-_chrony_conf: "/etc/chrony.conf"
+_chrony_conf: /etc/chrony.conf
 
-_chrony_keyfile: "/etc/chrony.keys"
+_chrony_keyfile: /etc/chrony.keys
 
-_chrony_driftfile: "/var/lib/chrony/drift"
+_chrony_driftfile: /var/lib/chrony/drift
 
-_chrony_logdir: "/var/log/chrony"
+_chrony_logdir: /var/log/chrony
 
 _chrony_configuration_commands:
-  - "server 0.centos.pool.ntp.org iburst"
-  - "server 1.centos.pool.ntp.org iburst"
-  - "server 2.centos.pool.ntp.org iburst"
-  - "server 3.centos.pool.ntp.org iburst"
+  - server 0.centos.pool.ntp.org iburst
+  - server 1.centos.pool.ntp.org iburst
+  - server 2.centos.pool.ntp.org iburst
+  - server 3.centos.pool.ntp.org iburst
 
 _yum:
-  - { state: "latest", name: "chrony" }
+  - { state: latest, name: chrony }

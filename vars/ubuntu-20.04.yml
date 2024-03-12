@@ -14,26 +14,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_chrony_owner: "_chrony"
+_chrony_owner: _chrony
 
-_chrony_group: "_chrony"
+_chrony_group: _chrony
 
-_service: "chrony.service"
+_service: chrony.service
 
-_chrony_conf: "/etc/chrony/chrony.conf"
+_chrony_conf: /etc/chrony/chrony.conf
 
-_chrony_keyfile: "/etc/chrony/chrony.keys"
+_chrony_keyfile: /etc/chrony/chrony.keys
 
-_chrony_driftfile: "/var/lib/chrony/chrony.drift"
+_chrony_driftfile: /var/lib/chrony/chrony.drift
 
-_chrony_logdir: "/var/log/chrony"
+_chrony_logdir: /var/log/chrony
 
 _chrony_configuration_commands:
-  - "pool 0.ubuntu.pool.ntp.org iburst"
-  - "pool 1.ubuntu.pool.ntp.org iburst"
-  - "pool 2.ubuntu.pool.ntp.org iburst"
-  - "pool 3.ubuntu.pool.ntp.org iburst"
-  - "pool ntp.ubuntu.com"
+  - pool 0.ubuntu.pool.ntp.org iburst
+  - pool 1.ubuntu.pool.ntp.org iburst
+  - pool 2.ubuntu.pool.ntp.org iburst
+  - pool 3.ubuntu.pool.ntp.org iburst
+  - pool ntp.ubuntu.com
 
 _apt:
-  - { state: "latest", name: "chrony" }
+  - { state: latest, name: chrony }
