@@ -29,11 +29,10 @@ _chrony_driftfile: /var/lib/chrony/chrony.drift
 _chrony_logdir: /var/log/chrony
 
 _chrony_configuration_commands:
-  - pool 0.ubuntu.pool.ntp.org iburst
-  - pool 1.ubuntu.pool.ntp.org iburst
-  - pool 2.ubuntu.pool.ntp.org iburst
-  - pool 3.ubuntu.pool.ntp.org iburst
-  - pool ntp.ubuntu.com
+  - pool 0.debian.pool.ntp.org iburst
+  - pool 1.debian.pool.ntp.org iburst
+  - pool 2.debian.pool.ntp.org iburst
+  - pool 3.debian.pool.ntp.org iburst
 
 _apt:
   - { state: latest, name: chrony }
