@@ -29,10 +29,10 @@ _chrony_driftfile: /var/lib/chrony/drift
 _chrony_logdir: /var/log/chrony
 
 _chrony_configuration_commands:
-  - server 0.fedora.pool.ntp.org iburst
-  - server 1.fedora.pool.ntp.org iburst
-  - server 2.fedora.pool.ntp.org iburst
-  - server 3.fedora.pool.ntp.org iburst
+  - pool 0.opensuse.pool.ntp.org iburst
+  - pool 1.opensuse.pool.ntp.org iburst
+  - pool 2.opensuse.pool.ntp.org iburst
+  - pool 3.opensuse.pool.ntp.org iburst
 
-_yum:
+_zypper:
   - { state: latest, name: chrony }
