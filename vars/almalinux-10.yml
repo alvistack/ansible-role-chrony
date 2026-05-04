@@ -34,5 +34,5 @@ _chrony_configuration_commands:
   - server 2.centos.pool.ntp.org iburst
   - server 3.centos.pool.ntp.org iburst
 
-_yum:
+_dnf:
   - { state: latest, name: chrony }
